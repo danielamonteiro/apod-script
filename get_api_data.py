@@ -21,10 +21,10 @@ class ApodApi:
             api_response = requests.get(self.apod_api_url, params=payload)
 
             if not api_response.status_code == 200:
-                print("Erro na comunicação com a API, tentando novamente...")
+                print("Erro na comunicação com a API")
             else: 
                 print("Resposta API:", api_response.text)
         except:
             print("Erro ao consultar API")
         
-        return api_response.text
+        return api_response.status_code, api_response.text
