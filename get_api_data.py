@@ -28,3 +28,4 @@ class ApodApi:
             print("Erro ao consultar API")
         
         return api_response.status_code, api_response.text
+ 

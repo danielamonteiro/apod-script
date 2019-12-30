@@ -4,6 +4,8 @@ from datetime import datetime
 import os
 
 from get_api_data import ApodApi
+from save_image_infos import download_image, save_image_infos
+from create_pdf import create_pdf
 
 class TreatApiData:
     def __init__(self):
@@ -17,17 +19,13 @@ class TreatApiData:
         self.image_title = self.api_response["title"]
         self.english_description = self.api_response["explanation"]
         self.image_url = self.api_response["url"]
-        self.download_image(self.image_url)
 
-        return self.copyright, self.image_title, self.english_description
+        return self.copyright, self.image_title, self.english_description, self.image_url
+    
 
-    def download_image(self, url_image):
-        try:
-            base_path = os.path.abspath(os.path.dirname(__file__))
-            photo_path = base_path + "/photos/"
-            name_file = f"{photo_path}{datetime.today().date()}-photo.jpg"
-            urllib.request.urlretrieve(url_image, name_file)
-            print("Imagem baixada com sucesso.")
-        except:
-            print("Erro ao baixar imagem do dia.")    
+
+photo_info = TreatApiData().get_photo_info()
+create_pdf(photo_info[1], photo_info[2], photo_info[0], str(datetime.today().date()))
+
+ 
 
