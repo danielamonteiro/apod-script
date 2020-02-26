@@ -24,7 +24,6 @@ def main_function():
             break
         elif option == "2":
             pdf_date = photo_date.strftime("%Y-%m-%d")
-            print("@@@@@@",photo_description)
             create_pdf(photo_title, photo_copywrite, photo_description, pdf_date, photo_url)
             break
         else:

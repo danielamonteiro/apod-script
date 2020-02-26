@@ -8,7 +8,8 @@ def create_pdf(title, copyright, description, date, url):
         photo_path = base_path + "/photos/"
         pdf_path = base_path + "/pdfs/"
         if os.path.exists(photo_path+date+'-photo.jpg'):
-            #TODO: ajustar os caracteres star\xe2\x80\x99
+            description = description.encode('latin-1', 'ignore')
+            description = description.decode('UTF-8')
             pdf_file = FPDF(orientation='P', format='A4')
             pdf_file.add_page()
             pdf_file.image(f'{photo_path}{date}-photo.jpg', x=30, w=150, link=url)
