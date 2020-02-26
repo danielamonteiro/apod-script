@@ -1,6 +1,6 @@
 # apod-script
 
-Aplicação criada para explorar o uso da API APOD (Astronomy Picture of the Day) da NASA e criação de pdfs utilizando Python.
+Aplicação criada para explorar o uso da API APOD* (Astronomy Picture of the Day) da NASA e criação de pdfs utilizando Python.
 
 *Necessário possuir uma api key para preencher o arquivo .env que pode ser gerada nesse link: https://api.nasa.gov/
 
