@@ -1,3 +1,5 @@
+# -*- Coding: UTF-8 -*-
+#coding: utf-8
 import requests
 import os
 
@@ -23,7 +25,7 @@ class ApodApi:
             if not api_response.status_code == 200:
                 print("Erro na comunicação com a API")
             else: 
-                print("Resposta API:", api_response.text)
+                print("Consulta realizada com sucesso!")
         except:
             print("Erro ao consultar API")
         
